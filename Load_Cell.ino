@@ -376,8 +376,22 @@ void setup() {
 
   // Serial.println("SERIAL: " + Serial.readString());
 
+
+   Serial.println("Place object you want to weight on scale");
+
+  Serial.println("Enter 1 to weight object");
+
+  while(proceed == 0){
+
+    proceed = Serial.parseFloat();
+
  
 
+  }
+
+  proceed = 0;
+
+  Serial.println(proceed);
  
 
  
@@ -399,28 +413,7 @@ void loop() {
     delay(1);
 
   }
-
  
-
-  Serial.println("Place object you want to weight on scale");
-
-  Serial.println("Enter 1 to weight object");
-
-  while(proceed == 0){
-
-    proceed = Serial.parseFloat();
-
- 
-
-  }
-
-  proceed = 0;
-
-  Serial.println(proceed);
-
- 
-
-  for(int i = 0; i <= 19; i++){
 
     int32_t val3 = nau.read();
 
@@ -457,67 +450,29 @@ void loop() {
       // Serial.println("Put a new weight on the scale");
 
       compRead = 0;
-
+      i=0;
       max = 0;
 
       // delay(5000);
+     Serial.println("Place object you want to weight on scale");
 
- 
+      Serial.println("Enter 1 to weight object");
 
- 
+      while(proceed == 0){
 
-    }
+        proceed = Serial.parseFloat();
 
+    
+
+      }
+
+      proceed = 0;
+
+      Serial.println(proceed);
+    
+
+  }else{
+    i = i +1;
   }
-
-  i = 0;
-
  
-
-  // int32_t val3 = nau.read();
-
-  // i++;
-
-  // compRead+= val3;
-
- 
-
-  // if(val3 > max){
-
-  //   max = val3;
-
-  // }
-
- 
-
-  // if(i == 20){
-
-  //   compRead = compRead/20;
-
-  //   yAvg = (compRead/slope) - zero;
-
-  //   yMax = (max/slope) - zero;
-
-  //   Serial.print("The average grams of weight on the scale is: "); Serial.println(yAvg);
-
-  //   Serial.print("The maximum grams of weight on the scale is: "); Serial.println(yMax);
-
-  //   Serial.println("Put a new weight on the scale");
-
-  //   i = 0;
-
-  //   compRead = 0;
-
-  //   delay(5000);
-
- 
-
- 
-
-  // }
-
- 
-
- 
-
 }
